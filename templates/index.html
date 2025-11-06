@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>🌤️ Suhu Realtime di Yogyakarta</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(to right, #e3f2fd, #fce4ec);
+      font-family: 'Poppins', sans-serif;
+      min-height: 100vh;
+    }
+    .container {
+      margin-top: 40px;
+    }
+    .title {
+      font-weight: 700;
+      color: #2c3e50;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 30px;
+      color: #777;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container text-center">
+  <h1 class="title mb-4">🌤️ Visualisasi Suhu Realtime di Yogyakarta</h1>
+
+  <div class="card shadow p-4 mb-4">
+    <h5 class="mb-3">📈 Grafik Perubahan Suhu</h5>
+    <img src="{{ url_for('static', filename='grafik_suhu.png') }}" class="img-fluid rounded shadow">
+  </div>
+
+  <div class="card shadow p-4">
+    <h5 class="mb-3">📊 Data Suhu 10 Jam Terakhir</h5>
+    <div class="table-responsive">
+      {{ table_data | safe }}
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>© 2025 Aplikasi Visualisasi Cuaca Yogyakarta | Data dari Open-Meteo API</p>
+  </div>
+</div>
+
+</body>
+</html>
